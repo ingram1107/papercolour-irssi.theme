@@ -1,0 +1,107 @@
+# Misc
+default_color = "-1";
+info_eol = "false";
+
+# Replacements
+replaces = { "[]=" = "%K$*%n"; };
+
+# Abstracts
+abstracts = {
+  ## generic
+  line_start = "%c-%n!%c-%n ";
+  timestamp = "%W$*";
+  hilight = "%_$*%_";
+  error = "%R$*%n";
+  channel = "%g%_$*%_";
+  nick = "%y%_$*%_%y";
+  nickhost = "(%y%_$*%_%y)";
+  server = "%g%_$*%_";
+  comment = "[$*]";
+  reason = "{comment $*}";
+  mode = "{comment $*}";
+
+  ##channel specific messages
+  channick_hilight = "%C$*%n";
+  chanhost_hilight = "{nickhost %c$*%n}";
+  channick = "%c$*%n";
+  chanhost = "{nickhost $*}";
+  channelhilight = "%g$*%n";
+  ban = "%r$*%n";
+
+  ## messages
+  msgnick = "%w(%_$0%_$1%w)%n %|";
+  ownmsgnick = "{msgnick $0 $1-}";
+  ownnick = "%_$*%n";
+  pubmsgnick = "{msgnick $0 $1-}";
+  pubnick = "%N$*%n";
+  pubmsgmenick = "{msgnick $0 $1-}";
+  menick = "%Y$*%n";
+  pubmsghinick = "{msgnick $1 $0$2-%n}";
+  msgchannel = "%K:%c$*%n";
+  privmsg = "[%R$0%K(%r$1-%K)%n] ";
+  ownprivmsg = "[%r$0%K(%R$1-%K)%n] ";
+  ownprivmsgnick = "{msgnick $*}";
+  ownprivnick = "%_$*%n";
+  privmsgnick = "{msgnick %R$*%n}";
+
+  ## actions (/me)
+  action_core = "%_ * $*%n";
+  action = "{action_core $*} ";
+  ownaction = "{action $*}";
+  ownaction_target = "{action_core $0}%K:%c$1%n ";
+  pvtaction = "%_ (*) $*%n ";
+  pvtaction_query = "{action $*}";
+  pubaction = "{action $*}";
+
+  ## others
+  whois = "%# %[8]0 : $1-";
+  ownnotice = "[%r$0%K(%R$1-%K)]%n ";
+  notice = "%K-%M$*%K-%n ";
+  pubnotice_channel = "%K:%m$*";
+  pvtnotice_host = "%K(%m$*%K)";
+  servernotice = "%g!$*%n ";
+  ownctcp = "[%r$0%K(%R$1-%K)]";
+  ctcp = "%g$*%n";
+  wallop = "%_$*%n: ";
+  wallop_nick = "%n$*";
+  wallop_action = "%_ * $*%n ";
+  netsplit = "%R$*%n";
+  netjoin = "%C$*%n";
+  names_prefix = "";
+  names_nick = "%w(%C$0%_$1%_%w) ";
+  names_nick_op = "{names_nick $*}";
+  names_nick_halfop = "{names_nick $*}";
+  names_nick_voice = "{names_nick $*}";
+  names_users = "%w(%g%I%_$*%w)";
+  names_channel = "%G$*";
+  dcc = "%g$*%n";
+  dccfile = "%_$*%_";
+  dccownmsg = "[%r$0%K($1-%K)%n] ";
+  dccownnick = "%R$*%n";
+  dccownquerynick = "%_$*%n";
+  dccownaction = "{action $*}";
+  dccownaction_target = "{action_core $0}%K:%c$1%n ";
+  dccmsg = "[%G$1-%K(%g$0%K)%n] ";
+  dccquerynick = "%G$*%n";
+  dccaction = "%_ (*dcc*) $*%n %|";
+
+  ## statusbar
+  sb_background = "%6%k%9";
+  sb_prompt_bg = "%n";
+  sb_info_bg = "%8";
+  sbstart = "";
+  sbend = " ";
+  topicsbstart = "{sbstart $*}";
+  topicsbend = "{sbend $*}";
+  prompt = "(%I%_%b'%b%Y$*%Y%_%I%w)%w ";
+  sb = " %c[%n$*%c]%n";
+  sbmode = " %k(%k+$0-%k)%n";
+  sbaway = " (%GzZzZ%n)";
+  sbservertag = ":$0 (^X to change)";
+  sbnickmode = "%0";
+  sb_act_sep = "%k$*";
+  sb_act_text = "%k$*";
+  sb_act_msg = "%k$*";
+  sb_act_hilight = "%k$*";
+  sb_act_hilight_color = "$0$1-%k";
+}
